@@ -29,7 +29,6 @@ func (room *Room) Start() {
 			room.Clients[client] = true
 			fmt.Println("There are", len(room.Clients), "person")
 			for client, _ := range room.Clients {
-				fmt.Println(client)
 				client.Conn.WriteJSON(Message{Type: 1, Body: "New User Joined..."})
 			}
 			break
