@@ -16,4 +16,6 @@
 # Dependency directories (remove the comment below to include it)
 # vendor/
 
-
+go.mod
+go.sum
+chat-api
