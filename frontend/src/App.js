@@ -13,6 +13,8 @@ class App extends Component {
     }
   }
 
+  state
+
   componentDidMount() {
     connect((msg) => {
       console.log("New Message")
