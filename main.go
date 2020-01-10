@@ -3,7 +3,10 @@ package main
 import (
 	"fmt"
 	"log"
+	"math"
+	"math/rand"
 	"net/http"
+	"strconv"
 )
 
 func serveWS(room *Room, w http.ResponseWriter, r *http.Request) {
@@ -12,7 +15,10 @@ func serveWS(room *Room, w http.ResponseWriter, r *http.Request) {
 		log.Fatal(err)
 	}
 
+	id := "#" + strconv.FormatInt(int64(math.Floor(rand.Float64()*0xFFFFFF)), 16)
+
 	client := &Client{
+		ID:   id,
 		Conn: conn,
 		Room: room,
 	}

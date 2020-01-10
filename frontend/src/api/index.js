@@ -1,6 +1,6 @@
 var socket = new WebSocket('ws://localhost:8080/ws');
 
-let connect = (cb) => {
+let connect = (mumeifunc) => {
   console.log("connecting")
 
   socket.onopen = () => {
@@ -9,7 +9,7 @@ let connect = (cb) => {
   
   socket.onmessage = (msg) => {
     console.log("Message from WebSocket: ", msg);
-    cb(msg);
+    mumeifunc(msg);
   }
 
   socket.onclose = (event) => {
@@ -22,7 +22,7 @@ let connect = (cb) => {
 };
 
 let sendMsg = (msg) => {
-  console.log("sending msg: ", msg);
+  console.log("sending msg to all clients: ", msg);
   socket.send(msg);
 };
 

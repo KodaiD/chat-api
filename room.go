@@ -25,18 +25,18 @@ func NewRoom() *Room {
 func (room *Room) Start() {
 	for {
 		select {
-		case client := <-room.Register:
-			room.Clients[client] = true
+		case cl := <-room.Register:
+			room.Clients[cl] = true
 			fmt.Println("There are", len(room.Clients), "person")
 			for client, _ := range room.Clients {
-				client.Conn.WriteJSON(Message{Type: 1, Body: "New User Joined..."})
+				client.Conn.WriteJSON(Message{Type: 2, Body: "New User Joined...", Author: cl.ID})
 			}
 			break
-		case client := <-room.Unregister:
-			delete(room.Clients, client)
+		case cl := <-room.Unregister:
+			delete(room.Clients, cl)
 			fmt.Println("There are", len(room.Clients), "person")
 			for client, _ := range room.Clients {
-				client.Conn.WriteJSON(Message{Type: 1, Body: "User Disconnected..."})
+				client.Conn.WriteJSON(Message{Type: 2, Body: "User Disconnected...", Author: cl.ID})
 			}
 			break
 		case message := <-room.Broadcast:

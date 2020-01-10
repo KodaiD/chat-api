@@ -16,8 +16,9 @@ type Client struct {
 
 // Message represents a message
 type Message struct {
-	Type int    `json:"type"`
-	Body string `json:"body"`
+	Type   int    `json:"type"`
+	Body   string `json:"body"`
+	Author string `json:"user"`
 }
 
 func (c *Client) Read() {
@@ -32,7 +33,7 @@ func (c *Client) Read() {
 			log.Fatal(err)
 			return
 		}
-		message := Message{Type: messageType, Body: string(p)}
+		message := Message{Type: messageType, Body: string(p), Author: c.ID}
 		c.Room.Broadcast <- message
 		fmt.Println("Message Received:", message.Body)
 	}

@@ -1,15 +1,37 @@
 .Message {
-    display: block;
+    display: flex;
     background-color: white;
-    margin: 10px auto;
-    box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.2);
-    padding: 10px 20px;
-    border-radius: 5px;
-    clear: both;
-  
-    &.me {
-      color: white;
-      float: right;
-      background-color: #328ec4;
-    }
+    margin: 10px;
   }
+
+.message-content {
+  align-items: flex-end;
+}
+
+.username {
+  display: block;
+  color: gray;
+  font-size: 20px;
+  padding-bottom: 0px;
+  text-align: left;
+}
+
+.text {
+  padding: 10px;
+  max-width: 600px;
+  margin: -10px 0px;
+  border-radius: 15px;
+  background-color: #DC143C;
+  color: white;
+  font-size: 30px;
+  float: left;
+  text-align: left;
+}
+
+.avatar {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 20px 15px;
+}
