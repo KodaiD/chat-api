@@ -1,10 +1,16 @@
 .header {
+    top: 0px;
+    left: 0px;
+    position: fixed;
     background-color: #DC143C;
+    height: 50px;
     width: 100%;
     margin: 0;
     padding: 20px;
     color: white;
     text-align: center;
+    font-size: 30px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   
     h2 {
       margin: 0;
