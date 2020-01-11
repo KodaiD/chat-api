@@ -7,6 +7,7 @@ import (
 	"math/rand"
 	"net/http"
 	"strconv"
+	"time"
 )
 
 func serveWS(room *Room, w http.ResponseWriter, r *http.Request) {
@@ -15,6 +16,8 @@ func serveWS(room *Room, w http.ResponseWriter, r *http.Request) {
 		log.Fatal(err)
 	}
 
+	// icon color
+	rand.Seed(time.Now().UnixNano())
 	id := "#" + strconv.FormatInt(int64(math.Floor(rand.Float64()*0xFFFFFF)), 16)
 
 	client := &Client{
