@@ -13,7 +13,7 @@ import (
 func serveWS(room *Room, w http.ResponseWriter, r *http.Request) {
 	conn, err := Upgrade(w, r)
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
 	}
 
 	// icon color

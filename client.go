@@ -31,7 +31,7 @@ func (c *Client) Read() {
 	for {
 		messageType, p, err := c.Conn.ReadMessage()
 		if err != nil {
-			log.Fatal(err)
+			log.Println(err)
 			return
 		}
 		message := Message{Type: messageType, Body: string(p), Author: c.ID}

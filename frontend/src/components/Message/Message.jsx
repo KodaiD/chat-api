@@ -14,7 +14,7 @@ class Message extends Component {
     const userId = this.state.message.user
     const type = this.state.message.type
     //return <div className="Message">{this.state.message.body}</div>;
-    if (type == 1) {
+    if (type === 1) {
       return (
         <div className='Message'>
           <span
@@ -30,7 +30,7 @@ class Message extends Component {
       </div>
       );
     };
-    if (type == 2) {
+    if (type === 2) {
       return (
         <div className="join">
           <p>{this.state.message.body}</p>
