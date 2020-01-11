@@ -1,11 +1,13 @@
-# chat-api
-This is an api that can send and receive messages on websocket. This is implemented by golang.  
-I use following techniques  
+# Realtime Anonymous Chat Application
+This is an application that allows you to talk without revealing your identity. You can see sent messages in real time. When you start the app you will be given a random color. This will be your identification.
+
+## Skills
+I use following techniques.  
+
 - Go
 - Go module
 - Web Socket
+- React
+
 ## Usage
-Frontend: Code the following in the js file.  
-```javascript
-var socket = new WebSocket("ws://localhost:8080/ws");
-```
+[![Image from Gyazo](https://i.gyazo.com/c8c070498fc2bb287138bbe7d52714e0.png)](https://gyazo.com/c8c070498fc2bb287138bbe7d52714e0)
