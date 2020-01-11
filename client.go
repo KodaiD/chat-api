@@ -21,6 +21,7 @@ type Message struct {
 	Author string `json:"user"`
 }
 
+// Read messages sent from websocket
 func (c *Client) Read() {
 	defer func() {
 		c.Room.Unregister <- c
