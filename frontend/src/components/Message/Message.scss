@@ -10,7 +10,7 @@
 
 .username {
   display: block;
-  color: gray;
+  color: rgb(92, 91, 91);
   font-size: 20px;
   padding-bottom: 0px;
   text-align: left;
@@ -21,7 +21,7 @@
   max-width: 600px;
   margin: -10px 0px;
   border-radius: 15px;
-  background-color: #DC143C;
+  background-color: rgb(92, 91, 91);
   color: white;
   font-size: 30px;
   float: left;
@@ -34,4 +34,14 @@
   border-radius: 50%;
   display: inline-block;
   margin: 20px 15px;
+}
+
+.join {
+  width: 20%;
+  margin: 10px auto;
+  text-align: center;
+  background-color: rgb(92, 91, 91);
+  color: white;
+  border-radius: 5px;
+  font-size: 18px;
 }

@@ -29,14 +29,16 @@ func (room *Room) Start() {
 			room.Clients[cl] = true
 			fmt.Println("There are", len(room.Clients), "person")
 			for client, _ := range room.Clients {
-				client.Conn.WriteJSON(Message{Type: 2, Body: "New User Joined...", Author: cl.ID})
+				str := "ゲスト" + cl.ID + "さんが参加しました"
+				client.Conn.WriteJSON(Message{Type: 2, Body: str, Author: cl.ID})
 			}
 			break
 		case cl := <-room.Unregister:
 			delete(room.Clients, cl)
 			fmt.Println("There are", len(room.Clients), "person")
 			for client, _ := range room.Clients {
-				client.Conn.WriteJSON(Message{Type: 2, Body: "User Disconnected...", Author: cl.ID})
+				str := "ゲスト" + cl.ID + "さんが退出しました"
+				client.Conn.WriteJSON(Message{Type: 2, Body: str, Author: cl.ID})
 			}
 			break
 		case message := <-room.Broadcast:
