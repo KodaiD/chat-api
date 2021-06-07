@@ -1,12 +1,6 @@
 # Realtime Anonymous Chat Application
 This is an application that allows you to talk without revealing your identity. You can see sent messages in real time. When you start the app you will be given a random color. This is for your identification.
 
-## Skills  
-- Go
-- Go module
-- Web Socket
-- React
-
 ## Usage
 Set up for Go
 
